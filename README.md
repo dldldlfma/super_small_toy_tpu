@@ -10,7 +10,7 @@ So, I made small module like below.
 
 ![architecture](./image/simple_architecture.png)
 
-If i have time. I will improve this code.
+if i can afford, i will improve thi code
 
 ## Preparations
 
