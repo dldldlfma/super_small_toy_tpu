@@ -54,7 +54,7 @@ assign out2 = mac11_out;
 wire fifo_en;
 assign fifo_en = (start) & (counter < 2);
 
-fifo u_fifo00(
+fifo u_fifo_00(
     .i_clk(i_clk),
     .i_rstn(i_rstn),
     .i_wr(in1_en),
@@ -65,7 +65,7 @@ fifo u_fifo00(
     .o_empty(o_empty[0])
 );
 
-fifo u_fifo01(
+fifo u_fifo_01(
     .i_clk(i_clk),
     .i_rstn(i_rstn),
     .i_wr(in2_en),
@@ -85,7 +85,7 @@ systolic_reg u_systolic(
     .out2(mac10_in)
 );
 
-mac u_mac00(
+mac u_mac_00(
     .i_clk(i_clk),
     .i_rstn(i_rstn),
     .i_data(mac00_in),
@@ -95,7 +95,7 @@ mac u_mac00(
     .o_result(mac00_out)
 );
 
-mac u_mac01(
+mac u_mac_01(
     .i_clk(i_clk),
     .i_rstn(i_rstn),
     .i_data(mac01_in),
@@ -105,7 +105,7 @@ mac u_mac01(
     .o_result(mac01_out)
 );
 
-mac u_mac10(
+mac u_mac_10(
     .i_clk(i_clk),
     .i_rstn(i_rstn),
     .i_data(mac10_in),
@@ -115,7 +115,7 @@ mac u_mac10(
     .o_result(mac10_out)
 );
 
-mac u_mac11(
+mac u_mac_11(
     .i_clk(i_clk),
     .i_rstn(i_rstn),
     .i_data(mac11_in),
