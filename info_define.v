@@ -1,0 +1,7 @@
+// Register Map
+
+`define MMU_BASE_ADDR 0
+`define ADDRESS_W00 (MMU_BASE_ADDR + 0x04)
+`define ADDRESS_W01 (MMU_BASE_ADDR + 0x08)
+`define ADDRESS_W10 (MMU_BASE_ADDR + 0x0c)
+`define ADDRESS_W11 (MMU_BASE_ADDR + 0x10)
