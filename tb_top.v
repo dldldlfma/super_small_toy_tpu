@@ -1,11 +1,10 @@
 module tb_top();
 
-
-parameter MMU_BASE_ADDR = 0;
-parameter ADDRESS_W00 = (MMU_BASE_ADDR + 32'h04);
-parameter ADDRESS_W01 = (MMU_BASE_ADDR + 32'h08);
-parameter ADDRESS_W10 = (MMU_BASE_ADDR + 32'h0c);
-parameter ADDRESS_W11 = (MMU_BASE_ADDR + 32'h10);
+parameter ADDRESS_W00 = 0;
+parameter ADDRESS_W01 = 1;
+parameter ADDRESS_W10 = 2;
+parameter ADDRESS_W11 = 3;
+parameter DEPTH = 4;
 
 reg i_clk;
 reg i_rstn;
@@ -16,8 +15,8 @@ reg in2_en;
 reg start;
 wire [2:0] o_full;
 wire [2:0] o_empty;
-wire [31:0] out1;
-wire [31:0] out2;
+// wire [31:0] out1;
+// wire [31:0] out2;
 wire done;
 
 wire [31:0]  paddr;
@@ -82,10 +81,6 @@ begin
 
     start <= 0;
     u1_apb_master.read(0,final_result);
-    @(posedge i_clk);
-    @(posedge i_clk);
-    @(posedge i_clk);
-    @(posedge i_clk);
     u1_apb_master.read(0,final_result);
     u1_apb_master.read(0,final_result);
     u1_apb_master.read(0,final_result);
@@ -143,8 +138,8 @@ tpu_top u0(
     .start(start),
     .o_full(o_full),
     .o_empty(o_empty),
-    .out1(out1),
-    .out2(out2),
+    // .out1(out1),
+    // .out2(out2),
     .done(done),
     .i_paddr(paddr),
     .i_psel(psel),

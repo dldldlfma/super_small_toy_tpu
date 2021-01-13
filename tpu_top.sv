@@ -9,10 +9,7 @@ module tpu_top(
     input start,
     output [2:0] o_full,
     output [2:0] o_empty,
-    output [31:0] out1,
-    output [31:0] out2,
     output done,
-
 
     // apb slave
     input [31:0] i_paddr,
@@ -25,13 +22,11 @@ module tpu_top(
 
 );
 
-
-parameter MMU_BASE_ADDR = 0;
-parameter ADDRESS_W00 = (MMU_BASE_ADDR + 32'h04);
-parameter ADDRESS_W01 = (MMU_BASE_ADDR + 32'h08);
-parameter ADDRESS_W10 = (MMU_BASE_ADDR + 32'h0c);
-parameter ADDRESS_W11 = (MMU_BASE_ADDR + 32'h10);
-parameter DEPTH = 256;
+parameter ADDRESS_W00 = 0;
+parameter ADDRESS_W01 = 1;
+parameter ADDRESS_W10 = 2;
+parameter ADDRESS_W11 = 3;
+parameter DEPTH = 4;
 
 reg [31:0] mem [0:DEPTH-1];
 
@@ -47,6 +42,9 @@ wire [31:0] mac11_out;
 
 wire [31:0] systolic_in1;
 wire [31:0] systolic_in2;
+
+wire [31:0] out1;
+wire [31:0] out2;
 
 assign out1 = mac10_out;
 assign out2 = mac11_out;
