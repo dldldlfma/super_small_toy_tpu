@@ -1,16 +1,10 @@
 # super small toy tpu
 
-I don't know real tpu inside.
-
-But, I read this article
-
 https://medium.com/@antonpaquin/whats-inside-a-tpu-c013eb51973e
-
-So, I made small module like below.
 
 ![architecture](./image/simple_architecture.png)
 
-if i can afford, i will improve thi code
+if i can afford, i will improve this code
 
 ## Preparations
 
